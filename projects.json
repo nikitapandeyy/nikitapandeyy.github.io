@@ -1,0 +1,16 @@
+[
+  {
+    "name": "AgentRedTeam",
+    "description": "An automated framework that tests AI agents against adversarial scenarios such as prompt injection, contradictory instructions, missing data, role confusion and tool failures. It scores each run with rule-based checks and an LLM judge to produce trust scores. The backend runs on FastAPI, PostgreSQL and GCP Cloud Run with CI/CD.",
+    "tags": "Python · Gemini ADK · FastAPI · PostgreSQL · Docker · GCP",
+    "link": "",
+    "linkText": "source"
+  },
+  {
+    "name": "Hybrid Retrieval Service",
+    "description": "A RAG-oriented search service that combines dense and sparse retrieval with Reciprocal Rank Fusion. It improved Precision@5 by 21% on a 10,000-document corpus, with sub-400 ms p95 latency and answer-grounding checks against the retrieved passages.",
+    "tags": "Python · FastAPI · FAISS · BM25",
+    "link": "",
+    "linkText": "source"
+  }
+]
