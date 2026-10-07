@@ -1,61 +1,124 @@
-:root {
-  --beige: #f3ead8;
-  --pink: #f6d5dc;
-  --blue: #cfe3f0;
-  --green: #d4e8d0;
-  --text: #4a4038;
-  --muted: #8a7d70;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nikita Pandey | ML Engineer</title>
+  <meta name="description" content="Machine learning engineer working on NLP, retrieval and AI agent evaluation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+  <header class="nav">
+    <a href="#top" class="logo">nikita pandey</a>
+    <nav>
+      <a href="#about">about</a>
+      <a href="#experience">experience</a>
+      <a href="#projects">projects</a>
+      <a href="#research">research</a>
+      <a href="#education">education</a>
+      <a href="#contact">contact</a>
+    </nav>
+  </header>
 
-html { scroll-behavior: smooth; }
+  <section class="hero" id="top">
+    <div class="hero-text">
+      <p class="hello">hi, I'm</p>
+      <h1>Nikita Pandey</h1>
+      <p class="tagline">Machine learning engineer building reliable NLP, retrieval and AI-agent systems.</p>
+    </div>
 
-body {
-  background: var(--beige);
-  color: var(--text);
-  font-family: 'Rubik', sans-serif;
-  font-weight: 300;
-  line-height: 1.7;
-}
+    <svg class="hills" viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="#cfe3f0" d="M0,170 C240,90 420,230 720,160 C1000,90 1200,210 1440,140 L1440,320 L0,320 Z"/>
+      <path fill="#f6d5dc" d="M0,215 C200,155 460,275 760,205 C1040,145 1240,255 1440,195 L1440,320 L0,320 Z"/>
+      <path fill="#d4e8d0" d="M0,255 C260,205 480,285 780,245 C1060,205 1260,275 1440,245 L1440,320 L0,320 Z"/>
+      <path fill="#f3ead8" d="M0,295 C300,265 520,310 800,285 C1080,260 1280,305 1440,290 L1440,320 L0,320 Z"/>
+    </svg>
+  </section>
 
-/* top bar */
-.nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 10;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 6vw;
-  background: rgba(243, 234, 216, 0.85);
-  backdrop-filter: blur(8px);
-}
-.logo { font-family: 'Fraunces', serif; font-weight: 700; color: var(--text); text-decoration: none; }
-.nav nav a { margin-left: 22px; color: var(--muted); text-decoration: none; font-size: 0.95rem; }
-.nav nav a:hover { color: var(--text); }
+  <main>
 
-/* hero */
-.hero {
-  position: relative;
-  min-height: 92vh;
-  display: flex;
-  align-items: center;
-  padding: 0 6vw;
-  overflow: hidden;
-  background: linear-gradient(180deg, var(--beige) 0%, #f8e4e4 100%);
-}
-.hello { color: var(--muted); font-size: 1.1rem; }
-.hero h1 { font-family: 'Fraunces', serif; font-size: clamp(2.8rem, 8vw, 5.5rem); line-height: 1.1; }
-.tagline { margin-top: 14px; max-width: 460px; font-size: 1.15rem; }
-.hills { position: absolute; left: 0; bottom: 0; width: 100%; height: 45%; }
+    <section id="about">
+      <h2>about</h2>
+      <p>I'm a machine learning engineer with an M.Tech in Computer Science &amp; Engineering (Analytics) from NIT Delhi. I work on NLP, retrieval-augmented generation and evaluating AI agents, and I like taking a model from an experiment to a service that runs reliably.</p>
+      <p>I've worked in a large production codebase at STMicroelectronics and published research on fake news detection.</p>
+      <p class="skills-line"><span>Machine learning</span> PyTorch, scikit-learn, Hugging Face, Transformers, fine-tuning</p>
+      <p class="skills-line"><span>GenAI &amp; retrieval</span> LLMs, RAG, FAISS, BM25, Gemini ADK, LangGraph</p>
+      <p class="skills-line"><span>Engineering</span> Python, C++, SQL, Bash, FastAPI, Docker, GCP, GitHub Actions</p>
+    </section>
 
-/* sections */
-main { max-width: 720px; margin: 0 auto; padding: 0 6vw; }
-section { padding: 70px 0; }
-h2 { font-family: 'Fraunces', serif; font-size: 1.9rem; margin-bottom: 14px; }
-h2::after { content: ''; display: block; width: 46px; height: 4px; margin-top: 8px; border-radius: 4px; background: var(--pink); }
-#projects h2::after { background: var(--blue); }
-#education h2::after { background: var(--green); }
+    <section id="experience">
+      <h2>experience</h2>
 
-footer { text-align: center; padding: 40px 0; color: var(--muted); font-size: 0.9rem; }
+      <div class="entry">
+        <p class="date">Jul 2025 – Jun 2026</p>
+        <h3>Machine Learning Engineer · STMicroelectronics</h3>
+        <ul>
+          <li>Built a Python automation system for library and QA checks that cut a manual engineering workflow from 2 hours to about 20 minutes.</li>
+          <li>Debugged Python and C++ components in a large, sparsely documented production codebase and fixed root causes.</li>
+          <li>Studied technical papers and worked with engineers to extend a framework toward an AI agent-based workflow.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <p class="date">2024 – 2025</p>
+        <h3>Teaching Assistant · NIT Delhi</h3>
+        <ul>
+          <li>Led Python, Data Structures and MySQL lab sessions for 60+ students.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>projects</h2>
+      <div id="project-list"><p class="muted">loading projects…</p></div>
+    </section>
+
+    <section id="research">
+      <h2>research</h2>
+      <div class="entry">
+        <p class="date">IEEE CE2CT-2026 · first author</p>
+        <h3>MetaRoBERTa: Gated Metadata Fusion for Fake News Detection</h3>
+        <p>A neural architecture that learns how much to trust the text versus the metadata for each input. It reached 90.5% Macro F1, 2.5 points above the baseline. I also found a benchmark feature that wouldn't be available at prediction time, and removing it gave a more honest score of 75.3%.</p>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>education</h2>
+
+      <div class="entry">
+        <p class="date">2024 – 2026</p>
+        <h3>M.Tech, Computer Science &amp; Engineering (Analytics)</h3>
+        <p>National Institute of Technology, Delhi · 85%</p>
+      </div>
+
+      <div class="entry">
+        <p class="date">2020 – 2024</p>
+        <h3>B.Tech, Computer Science &amp; Engineering</h3>
+        <p>Dr. Shakuntala Misra National Rehabilitation University, Lucknow · CGPA 8.92/10, Silver Medalist</p>
+      </div>
+
+      <p class="muted">GATE 2024: qualified in Computer Science &amp; IT and in Data Science &amp; AI.</p>
+    </section>
+
+    <section id="contact">
+      <h2>contact</h2>
+      <p>Open to ML and software engineering roles. The best way to reach me is email.</p>
+      <p class="links">
+        <a href="mailto:nikitapandey1020@gmail.com">email</a>
+        <a href="https://github.com/nikitapandeyy">github</a>
+        <a href="#" id="linkedin">linkedin</a>
+        <a href="#" id="resume">resume</a>
+      </p>
+    </section>
+
+  </main>
+
+  <footer>© 2026 Nikita Pandey</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
