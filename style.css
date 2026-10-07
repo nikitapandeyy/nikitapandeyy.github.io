@@ -1,0 +1,20 @@
+/* entries (experience, education, research) */
+.entry { margin-bottom: 26px; }
+.date { font-size: 0.85rem; color: var(--muted); letter-spacing: 0.03em; }
+h3 { font-family: 'Fraunces', serif; font-size: 1.15rem; font-weight: 500; margin: 2px 0 6px; }
+ul { padding-left: 20px; }
+li { margin-bottom: 6px; }
+p + p { margin-top: 10px; }
+.muted { color: var(--muted); font-size: 0.95rem; }
+
+/* skills lines in about */
+.skills-line { font-size: 0.95rem; }
+.skills-line span { display: inline-block; min-width: 130px; color: var(--muted); }
+
+/* projects (no cards, just a clean list) */
+.project { padding: 18px 0; border-top: 1px solid rgba(74, 64, 56, 0.12); }
+.project:first-child { border-top: none; padding-top: 0; }
+.tags { font-size: 0.85rem; color: var(--muted); margin: 4px 0 6px; }
+.project a, .links a { color: var(--text); text-decoration: none; border-bottom: 2px solid var(--pink); margin-right: 18px; }
+.project a:hover, .links a:hover { border-color: var(--blue); }
+.links { margin-top: 14px; }
