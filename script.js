@@ -48,3 +48,46 @@ fetch('projects.json')
   document.getElementById('enter').addEventListener('click', enter);
   document.addEventListener('keydown', e => { if (e.key === 'Escape') enter(); });
 })();
+
+// 3. The winged cat floats down the page as you scroll; the girl watches it
+(function () {
+  const cat = document.getElementById('flycat');
+  const girl = [...document.querySelectorAll('#girl img')];
+  const wings = [...cat.querySelectorAll('img')];
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let target = 0, cur = 0, dir = 1, last = window.scrollY;
+
+  function progress() {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    return max > 0 ? window.scrollY / max : 0;
+  }
+  function pose(p) {                     // looking up, looking higher, smiling (found the cat)
+    const i = p < 0.34 ? 0 : p < 0.67 ? 1 : 2;
+    girl.forEach((img, k) => img.classList.toggle('on', k === i));
+  }
+  function place() {
+    const room = window.innerHeight - cat.offsetHeight - 24;
+    const sway = reduce ? 0 : Math.sin(cur * 12) * 14;
+    const tilt = reduce ? 0 : dir * 5;
+    cat.style.transform = `translate(${sway}px, ${12 + cur * room}px) rotate(${tilt}deg)`;
+  }
+
+  window.addEventListener('scroll', () => {
+    target = progress();
+    dir = window.scrollY > last ? 1 : -1;   // tilts one way going down, the other going up
+    last = window.scrollY;
+    pose(target);
+    if (reduce) { cur = target; place(); }
+  }, { passive: true });
+  window.addEventListener('resize', place);
+
+  target = cur = progress(); pose(target); place();
+  if (reduce) return;
+
+  setInterval(() => wings.forEach(img => img.classList.toggle('on')), 380);  // flap
+  (function loop() {
+    cur += (target - cur) * 0.08;           // glide instead of jump
+    place();
+    requestAnimationFrame(loop);
+  })();
+})();
