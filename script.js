@@ -54,6 +54,7 @@ fetch('projects.json')
   const cat = document.getElementById('flycat');
   const girl = [...document.querySelectorAll('#girl img')];
   const wings = [...cat.querySelectorAll('img')];
+  const says = cat.querySelector('.cat-says');
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let target = 0, cur = 0, dir = 1, last = window.scrollY;
 
@@ -63,6 +64,7 @@ fetch('projects.json')
   }
   function pose(p) {                     // looking up, looking higher, smiling (found the cat)
     const i = p < 0.34 ? 0 : p < 0.67 ? 1 : 2;
+    says.classList.toggle('show', p > 0.93);
     girl.forEach((img, k) => img.classList.toggle('on', k === i));
   }
   function place() {
@@ -91,3 +93,13 @@ fetch('projects.json')
     requestAnimationFrame(loop);
   })();
 })();
+
+// 4. "copy email" button
+const copyBtn = document.getElementById('copy-email');
+if (copyBtn) {
+  copyBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText('nikitapandey1020@gmail.com')
+      .then(() => { copyBtn.textContent = 'copied!'; setTimeout(() => { copyBtn.textContent = 'copy email'; }, 1600); })
+      .catch(() => { window.location.href = 'mailto:nikitapandey1020@gmail.com'; });
+  });
+}
