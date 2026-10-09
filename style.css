@@ -4,6 +4,9 @@
   --rose: #e0709c;
   --text: #4a2c3a;
   --muted: #8f6b7b;
+  --mint: #cfe8dc;
+  --sky: #cfe3ee;
+  --cream: #fbf1c9;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -108,7 +111,7 @@ li { margin-bottom: 6px; }
 /* skills as little pills */
 .pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }
 .pills span {
-  background: #fff; border: 2px solid var(--pink);
+  background: #fff; border: 2px solid var(--mint);
   border-radius: 99px; padding: 0 14px; font-size: 0.92rem; line-height: 1.8;
 }
 
@@ -129,4 +132,30 @@ footer { text-align: center; padding: 36px 0 46px; color: var(--muted); font-siz
   html { scroll-behavior: auto; }
   #intro { transition: none; }
   .bubble { animation: none; }
+}
+
+/* pastel rainbow behind the name */
+.hero { position: relative; overflow: hidden; }
+.hero::before {
+  content: ''; position: absolute; left: 50%; top: 30px; z-index: 0;
+  width: min(560px, 92vw); aspect-ratio: 2 / 1; transform: translateX(-50%);
+  background: radial-gradient(circle closest-side at 50% 100%, transparent 70%,
+    var(--sky) 70% 77%, var(--mint) 77% 84%, var(--cream) 84% 91%, var(--pink) 91% 98%, transparent 98%);
+}
+.hero > * { position: relative; z-index: 1; }
+
+/* girl (left) and flying cat (right) follow the scroll */
+.stack img { display: block; width: 100%; opacity: 0; transition: opacity 0.3s; }
+.stack img + img { position: absolute; left: 0; top: 0; }
+.stack img.on { opacity: 1; }
+
+#girl {
+  display: none; position: fixed; left: 1vw; bottom: 0; z-index: 5;
+  width: clamp(150px, 15vw, 250px); pointer-events: none;
+}
+@media (min-width: 1000px) { #girl { display: block; } }
+
+#flycat {
+  position: fixed; top: 0; right: 2vw; z-index: 6;
+  width: clamp(56px, 9vw, 130px); pointer-events: none; will-change: transform;
 }
