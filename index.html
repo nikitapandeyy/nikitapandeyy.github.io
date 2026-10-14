@@ -38,8 +38,8 @@
   <section class="hero">
     <p class="hello">hi, I'm</p>
     <h1>Nikita Pandey</h1>
-    <p class="role">machine learning engineer</p>
-    <p class="tagline">I build NLP and retrieval systems, and I test AI agents until they're reliable.</p>
+    <p class="role">machine learning engineer · DevOps · cloud</p>
+    <p class="tagline">I build NLP and retrieval systems, ship them with Docker and CI/CD on the cloud, and test AI agents until they're reliable.</p>
     <p class="hero-cta">
       <a class="btn-main" href="#projects">see my projects</a>
       <a class="btn-soft" href="#contact">say hi</a>
@@ -54,20 +54,30 @@
   <main>
     <section id="about">
       <h2>about</h2>
-      <p>I'm Nikita, a machine learning engineer with an M.Tech from NIT Delhi. I work on NLP, retrieval and AI agents, and I care most about the step after the experiment: making a model run reliably inside a real service.</p>
+      <p>I'm Nikita, a machine learning engineer with an M.Tech from NIT Delhi. I work on NLP, retrieval and AI agents, and I care most about the step after the experiment: making a model run reliably inside a real service, with Docker, CI/CD and cloud deployment.</p>
       <p>At STMicroelectronics I worked in a large production codebase, and my first-author paper on fake news detection is at IEEE CE2CT-2026.</p>
     </section>
 
     <section id="skills">
       <h2>skills</h2>
+      <h3>how I ship ML</h3>
+      <div class="flow" id="flow">
+        <button type="button" class="on">build &amp; evaluate</button><span class="arrow">→</span>
+        <button type="button">serve</button><span class="arrow">→</span>
+        <button type="button">package</button><span class="arrow">→</span>
+        <button type="button">test &amp; automate</button><span class="arrow">→</span>
+        <button type="button">deploy &#9729;</button><span class="arrow">→</span>
+        <button type="button">check quality</button>
+      </div>
+      <p class="flow-text" id="flow-text"></p>
       <h3>machine learning</h3>
-      <p class="pills"><span>PyTorch</span><span>scikit-learn</span><span>Hugging Face</span><span>Transformers</span><span>Fine-tuning</span><span>Deep learning</span></p>
+      <p class="pills"><span>PyTorch</span><span>scikit-learn</span><span>Hugging Face</span><span>Transformers</span><span>Fine-tuning</span><span>Deep learning</span><span>Model evaluation</span><span>Feature engineering</span></p>
       <h3>GenAI &amp; retrieval</h3>
       <p class="pills"><span>LLMs</span><span>RAG</span><span>FAISS</span><span>BM25</span><span>Gemini ADK</span><span>LangGraph</span></p>
       <h3>engineering</h3>
-      <p class="pills"><span>Python</span><span>C++</span><span>SQL</span><span>Bash</span><span>FastAPI</span><span>REST APIs</span><span>Git</span><span>Linux</span></p>
+      <p class="pills"><span>Python</span><span>C++</span><span>SQL</span><span>Bash</span><span>FastAPI</span><span>REST APIs</span><span>PostgreSQL</span><span>MySQL</span><span>Git</span><span>Linux</span></p>
       <h3>&#9729; cloud &amp; devops</h3>
-      <p class="pills"><span>Docker</span><span>CI/CD</span><span>GitHub Actions</span><span>GCP</span><span>Cloud Run</span><span>AWS</span></p>
+      <p class="pills"><span>Docker</span><span>CI/CD</span><span>GitHub Actions</span><span>Automated testing</span><span>GCP</span><span>Cloud Run</span><span>AWS</span></p>
     </section>
 
     <section id="projects">
