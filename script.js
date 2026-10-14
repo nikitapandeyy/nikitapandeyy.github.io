@@ -5,8 +5,9 @@ fetch('projects.json')
     document.getElementById('project-list').innerHTML = projects.map(p => `
       <div class="project">
         <h3>${p.name}</h3>
+        ${p.summary ? `<p class="summary">${p.summary}</p>` : ''}
         <p class="tags">${p.tags}</p>
-        <p>${p.description}</p>
+        ${p.points ? `<ul>${p.points.map(x => `<li>${x}</li>`).join('')}</ul>` : `<p>${p.description}</p>`}
         ${p.link ? `<a href="${p.link}">${p.linkText || 'view'}</a>` : ''}
       </div>
     `).join('');
@@ -55,6 +56,14 @@ fetch('projects.json')
   const girl = [...document.querySelectorAll('#girl img')];
   const wings = [...cat.querySelectorAll('img')];
   const says = cat.querySelector('.cat-says');
+  const lines = ['meow!', 'keep scrolling!', 'I love my human', 'ask her about RAG'];
+  let n = 0, timer;
+  cat.addEventListener('click', () => {      // tap the cat and it talks
+    says.textContent = lines[n++ % lines.length];
+    says.classList.add('show');
+    clearTimeout(timer);
+    timer = setTimeout(() => { says.textContent = 'say hi!'; says.classList.toggle('show', progress() > 0.93); }, 1800);
+  });
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let target = 0, cur = 0, dir = 1, last = window.scrollY;
 
@@ -103,3 +112,33 @@ if (copyBtn) {
       .catch(() => { window.location.href = 'mailto:nikitapandey1020@gmail.com'; });
   });
 }
+
+// 5. menu highlights the section you are reading
+const navLinks = [...document.querySelectorAll('.nav a')];
+const navSecs = navLinks.map(a => document.querySelector(a.getAttribute('href')));
+window.addEventListener('scroll', () => {
+  let cur = -1;
+  navSecs.forEach((sec, i) => { if (sec && sec.getBoundingClientRect().top < window.innerHeight * 0.4) cur = i; });
+  navLinks.forEach((a, i) => a.classList.toggle('active', i === cur));
+}, { passive: true });
+
+// 6. "how I ship ML": tap or hover a step to see what I did there
+const flowSteps = [
+  'PyTorch, scikit-learn and Hugging Face models, tested with controlled experiments. MetaRoBERTa reached 90.5% Macro F1, and I caught a feature that would not exist at prediction time.',
+  'FastAPI services. The hybrid retrieval service answers with sub-400 ms p95 latency.',
+  'Services are packaged with Docker. AgentRedTeam runs this way.',
+  'Automated tests and CI/CD with GitHub Actions on AgentRedTeam. At STMicroelectronics I automated QA checks and cut a 2-hour workflow to about 20 minutes.',
+  'The AgentRedTeam backend runs on GCP Cloud Run with PostgreSQL.',
+  'AI agents and RAG answers are checked with rule-based checks, an LLM judge, and grounding tests against the source passages.'
+];
+const flowBtns = [...document.querySelectorAll('#flow button')];
+const flowText = document.getElementById('flow-text');
+function showStep(i) {
+  flowBtns.forEach((b, k) => b.classList.toggle('on', k === i));
+  flowText.textContent = flowSteps[i];
+}
+flowBtns.forEach((b, i) => {
+  b.addEventListener('click', () => showStep(i));
+  b.addEventListener('mouseenter', () => showStep(i));
+});
+showStep(0);
