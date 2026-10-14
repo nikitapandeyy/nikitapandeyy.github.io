@@ -230,3 +230,15 @@ footer { text-align: center; padding: 36px 0 46px; color: var(--muted); font-siz
 @media (prefers-reduced-motion: reduce) {
   .cloud { animation: none; transform: translateX(var(--x)) scale(var(--s)); }
 }
+
+/* how I ship ML: clickable pipeline */
+.flow { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 4px; margin: 8px 0 4px; }
+.flow button {
+  font-family: 'Fredoka', sans-serif; font-weight: 500; font-size: 0.95rem; color: var(--text);
+  background: #fff; border: 2px solid var(--mint); border-radius: 99px; padding: 0.1em 1em; cursor: pointer;
+  transition: transform 0.15s, background 0.2s;
+}
+.flow button:hover { background: var(--mint); transform: translateY(-2px); }
+.flow button.on { background: var(--rose); border-color: var(--rose); color: #fff; }
+.arrow { color: var(--rose); }
+.flow-text { min-height: 5.6em; margin: 8px 0 22px; }
