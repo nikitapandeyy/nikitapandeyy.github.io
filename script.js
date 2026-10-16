@@ -142,3 +142,23 @@ flowBtns.forEach((b, i) => {
   b.addEventListener('mouseenter', () => showStep(i));
 });
 showStep(0);
+
+// 7. buttons: stars burst out on click; "coming soon" buttons do nothing yet
+document.addEventListener('click', e => {
+  const t = e.target.closest('.soc, .btn-main, .btn-soft');
+  if (!t) return;
+  if (t.classList.contains('soon')) e.preventDefault();
+  const r = t.getBoundingClientRect();
+  const x = r.left + r.width / 2, y = r.top + r.height / 2;
+  for (let i = 0; i < 10; i++) {
+    const sp = document.createElement('span');
+    sp.className = 'spark';
+    sp.textContent = ['\u273F', '\u2726', '\u2665'][i % 3];
+    const ang = (Math.PI * 2 * i) / 10, dist = 40 + Math.random() * 40;
+    sp.style.left = x + 'px'; sp.style.top = y + 'px';
+    sp.style.setProperty('--dx', Math.cos(ang) * dist + 'px');
+    sp.style.setProperty('--dy', Math.sin(ang) * dist + 'px');
+    document.body.appendChild(sp);
+    setTimeout(() => sp.remove(), 800);
+  }
+});
