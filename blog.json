@@ -1,0 +1,29 @@
+[
+  {
+    "series": "TensorFlow",
+    "blurb": "Learning TensorFlow step by step.",
+    "parts": [
+      { "title": "Part 1", "url": "" },
+      { "title": "Part 2", "url": "" },
+      { "title": "Part 3", "url": "" }
+    ]
+  },
+  {
+    "series": "Mini Kafka",
+    "blurb": "Building a Kafka-like system from scratch.",
+    "parts": [
+      { "title": "Part 1", "url": "" },
+      { "title": "Part 2", "url": "" },
+      { "title": "Part 3", "url": "" }
+    ]
+  },
+  {
+    "series": "SQL",
+    "blurb": "SQL from the basics to advanced.",
+    "parts": [
+      { "title": "Part 1", "url": "" },
+      { "title": "Part 2", "url": "" },
+      { "title": "Part 3", "url": "" }
+    ]
+  }
+]
