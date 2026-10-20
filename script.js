@@ -19,6 +19,7 @@ fetch('projects.json')
 // 2. Welcome screen: the cat waves by cycling its three pictures
 (function () {
   const intro = document.getElementById('intro');
+  if (!intro) return;
   const frames = intro.querySelectorAll('.stage img');
   const order = [0, 1, 2, 1];           // paw down, paw up, paw tilted, paw up
   let step = 0, delay = 280, timer;
