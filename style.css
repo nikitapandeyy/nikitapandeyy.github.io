@@ -271,3 +271,35 @@ footer { text-align: center; padding: 36px 0 46px; color: var(--muted); font-siz
   .soc:hover b { transform: none; }
   .spark { display: none; }
 }
+
+/* ---- new look: Barbie headings, pink-to-blue background, soft trees ---- */
+:root { --bg: #ffe1ef; --pink: #ffb3d6; --rose: #e8338f; --sky: #bcd8ff; --mint: #cdeee6; --text: #432333; }
+body { background: linear-gradient(160deg, #ffd3e8 0%, #fbe0f1 38%, #dcebff 72%, #c9e0ff 100%) fixed; }
+.nav { background: rgba(255, 238, 247, 0.8); }
+.hero::before { display: none; }
+.cloud { display: none; }
+
+/* white letters with a pink outline */
+.hero h1, h2 {
+  color: #fff; letter-spacing: 0.02em;
+  text-shadow:
+    calc(var(--o) * -1) calc(var(--o) * -1) 0 var(--rose), var(--o) calc(var(--o) * -1) 0 var(--rose),
+    calc(var(--o) * -1) var(--o) 0 var(--rose), var(--o) var(--o) 0 var(--rose),
+    0 calc(var(--o) * -1) 0 var(--rose), 0 var(--o) 0 var(--rose),
+    calc(var(--o) * -1) 0 0 var(--rose), var(--o) 0 0 var(--rose),
+    0 calc(var(--o) * 2.4) 0 #a8105f;
+}
+.hero h1 { --o: 3px; }
+h2 { --o: 2px; }
+h2::before, .hero h1::after { color: #fff; }
+.btn-main { box-shadow: 0 4px 0 #a8105f; }
+.btn-main:hover { background: #d1247d; }
+
+/* soft pink and blue trees along the bottom, behind everything */
+#sky::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: min(34vh, 260px);
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27640%27%20height%3D%27220%27%20viewBox%3D%270%200%20640%20220%27%3E%3Cdefs%3E%3Cg%20id%3D%27t%27%3E%3Cpolygon%20points%3D%2740%2C0%2012%2C60%2068%2C60%27%2F%3E%3Cpolygon%20points%3D%2740%2C30%206%2C100%2074%2C100%27%2F%3E%3Cpolygon%20points%3D%2740%2C70%200%2C150%2080%2C150%27%2F%3E%3Crect%20x%3D%2735%27%20y%3D%27150%27%20width%3D%2710%27%20height%3D%2725%27%2F%3E%3C%2Fg%3E%3C%2Fdefs%3E%3Cg%20fill%3D%27%23f7a8cb%27%3E%3Cuse%20href%3D%27%23t%27%20x%3D%2710%27%20y%3D%2745%27%2F%3E%3Cuse%20href%3D%27%23t%27%20transform%3D%27translate%28130%2098%29%20scale%28.7%29%27%2F%3E%3Cuse%20href%3D%27%23t%27%20transform%3D%27translate%28230%2028%29%20scale%281.1%29%27%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%27%23a9c9f5%27%3E%3Cuse%20href%3D%27%23t%27%20transform%3D%27translate%28380%2071%29%20scale%28.85%29%27%2F%3E%3Cuse%20href%3D%27%23t%27%20transform%3D%27translate%28480%20106%29%20scale%28.65%29%27%2F%3E%3Cuse%20href%3D%27%23t%27%20transform%3D%27translate%28560%2063%29%20scale%28.9%29%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") repeat-x left bottom / auto 100%; opacity: 0.5;
+}
+
+/* smaller, calmer flying cat */
+#flycat { width: clamp(44px, 6vw, 86px); }
