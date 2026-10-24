@@ -280,7 +280,7 @@ body { background: linear-gradient(160deg, #ffd3e8 0%, #fbe0f1 38%, #dcebff 72%,
 .cloud { display: none; }
 
 /* white letters with a pink outline */
-.hero h1, h2 {
+.hero h1, h2, .thanks {
   color: #fff; letter-spacing: 0.02em;
   text-shadow:
     calc(var(--o) * -1) calc(var(--o) * -1) 0 var(--rose), var(--o) calc(var(--o) * -1) 0 var(--rose),
@@ -290,7 +290,7 @@ body { background: linear-gradient(160deg, #ffd3e8 0%, #fbe0f1 38%, #dcebff 72%,
     0 calc(var(--o) * 2.4) 0 #a8105f;
 }
 .hero h1 { --o: 3px; }
-h2 { --o: 2px; }
+h2, .thanks { --o: 2px; }
 h2::before, .hero h1::after { color: #fff; }
 .btn-main { box-shadow: 0 4px 0 #a8105f; }
 .btn-main:hover { background: #d1247d; }
@@ -303,3 +303,30 @@ h2::before, .hero h1::after { color: #fff; }
 
 /* smaller, calmer flying cat */
 #flycat { width: clamp(44px, 6vw, 86px); }
+
+/* ---- spring-in-Paris scene (artwork from the reference pictures; swap for your own later) ---- */
+body { background: linear-gradient(180deg, #d4e8fb 0%, #e9f2fb 40%, #fdf2ec 100%) fixed; }
+.nav { background: rgba(255, 255, 255, 0.7); }
+#sky::after { display: none; }
+.hero:not(.small) {
+  min-height: 90vh; padding-top: 15vh; overflow: hidden;
+  background: url(images/hero-rooftops.webp) center bottom / cover no-repeat;
+}
+.hero:not(.small)::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 22%;
+  background: linear-gradient(to bottom, rgba(233, 242, 251, 0), #e9f2fb);
+}
+.hero .canopy {
+  position: absolute; top: 0; left: 0; width: 100%; height: 42%; z-index: 0; pointer-events: none;
+  object-fit: cover; object-position: center top; opacity: 0.92;
+  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent);
+  mask-image: linear-gradient(to bottom, #000 55%, transparent);
+}
+.scene-footer { padding: 0; text-align: center; }
+.scene-img {
+  display: block; width: 100%; max-height: 300px; object-fit: cover; object-position: center 60%;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 40%);
+  mask-image: linear-gradient(to bottom, transparent, #000 40%);
+}
+.thanks { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.7rem; margin: 6px 0 2px; }
+.scene-footer p:last-child { color: var(--muted); font-size: 0.9rem; padding-bottom: 30px; }
