@@ -330,3 +330,18 @@ body { background: linear-gradient(180deg, #d4e8fb 0%, #e9f2fb 40%, #fdf2ec 100%
 }
 .thanks { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.7rem; margin: 6px 0 2px; }
 .scene-footer p:last-child { color: var(--muted); font-size: 0.9rem; padding-bottom: 30px; }
+
+/* ---- calmer opening: text on clear sky, the illustration sits underneath ---- */
+.hero:not(.small) {
+  min-height: 0; padding: 70px 6vw 0; display: block;
+  background: linear-gradient(180deg, #cfe4fb 0%, #e3eefb 60%, #e9f2fb 100%);
+}
+.hero:not(.small)::after { height: 10%; }
+.hero .canopy { display: none; }
+.roofs {
+  display: block; width: calc(100% + 12vw); margin: 36px -6vw 0;
+  height: min(46vh, 430px); object-fit: cover; object-position: center bottom;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 32%);
+  mask-image: linear-gradient(to bottom, transparent, #000 32%);
+}
+.hello { color: var(--text); }
