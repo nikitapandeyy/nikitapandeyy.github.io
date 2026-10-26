@@ -163,3 +163,17 @@ document.addEventListener('click', e => {
     setTimeout(() => sp.remove(), 800);
   }
 });
+
+// 8. the yellow phone types its message
+(function () {
+  const msg = document.querySelector('.msg');
+  if (!msg) return;
+  const text = msg.dataset.text;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { msg.textContent = text; return; }
+  let i = 0;
+  msg.classList.add('typing');
+  (function type() {
+    msg.textContent = text.slice(0, ++i);
+    if (i < text.length) setTimeout(type, 55); else msg.classList.remove('typing');
+  })();
+})();
