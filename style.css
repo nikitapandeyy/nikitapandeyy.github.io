@@ -345,3 +345,70 @@ body { background: linear-gradient(180deg, #d4e8fb 0%, #e9f2fb 40%, #fdf2ec 100%
   mask-image: linear-gradient(to bottom, transparent, #000 32%);
 }
 .hello { color: var(--text); }
+
+/* ---- Y2K scrapbook look: chrome script, pixel labels, yellow phone ---- */
+:root { --rose: #d6246e; --text: #3a1a24; --cherry: #8e1b34; }
+body {
+  background:
+    radial-gradient(rgba(214, 36, 110, 0.16) 1.2px, transparent 1.5px) 0 0 / 18px 18px,
+    linear-gradient(180deg, #f9c9de 0%, #fbe3ee 45%, #f6d6ea 100%) fixed;
+}
+.nav { background: rgba(255, 226, 239, 0.88); }
+.nav a { font-family: 'VT323', monospace; font-size: 1.35rem; letter-spacing: 0.03em; }
+h2 {
+  font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700;
+  color: var(--cherry); text-shadow: none; letter-spacing: 0;
+}
+h2::before, .hero h1::after { content: '\2726  '; color: var(--rose); }
+.hero h1::after { content: none; }
+
+.hero:not(.small) {
+  padding: 56px 6vw 70px; overflow: hidden;
+  background:
+    radial-gradient(ellipse 40% 12% at 14% 84%, rgba(255, 255, 255, 0.75), transparent 70%),
+    radial-gradient(ellipse 46% 14% at 72% 92%, rgba(255, 255, 255, 0.8), transparent 70%),
+    radial-gradient(ellipse 30% 10% at 44% 72%, rgba(255, 236, 246, 0.7), transparent 70%),
+    linear-gradient(180deg, #a9bff0 0%, #f2c5e0 42%, #ffd7bd 72%, #f6b9d4 100%);
+}
+.hero:not(.small)::after { display: none; }
+.px { font-family: 'VT323', monospace; font-size: 1.4rem; color: var(--cherry); margin: 0; }
+
+.hero h1.chrome, .hero.small h1, .thanks.chrome {
+  font-family: 'Lobster Two', cursive; font-style: italic; font-weight: 700; letter-spacing: 0;
+  background: linear-gradient(180deg, #ffffff 0%, #ffc4de 26%, #e0508f 50%, #ffd6e8 63%, #c23676 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px rgba(130, 20, 75, 0.5);
+  text-shadow: none;
+  filter: drop-shadow(0 3px 0 rgba(150, 30, 90, 0.35)) drop-shadow(0 0 14px rgba(255, 255, 255, 0.75));
+}
+.hero h1.chrome { line-height: 1.02; margin: 6px 0 4px; }
+.chrome .l1 { display: block; font-size: clamp(1.8rem, 5vw, 2.8rem); }
+.chrome .l2 { display: block; font-size: clamp(3rem, 11vw, 6.2rem); }
+.tw { display: inline-block; animation: twinkle 2.4s ease-in-out infinite; }
+@keyframes twinkle { 50% { transform: scale(0.65) rotate(25deg); opacity: 0.6; } }
+.thanks.chrome { font-size: 2.3rem; }
+.hero .role { color: var(--cherry); }
+
+.nokia {
+  position: relative; width: min(290px, 78vw); margin: 34px auto 0; padding: 16px 16px 22px;
+  border-radius: 44px 44px 36px 36px; transform: rotate(-2deg); transition: transform 0.3s;
+  background: linear-gradient(180deg, #fff8ad, #f5e35a);
+  box-shadow: 0 10px 0 #cdb92f, 0 24px 30px rgba(120, 60, 90, 0.28);
+}
+.nokia:hover { transform: rotate(0) translateY(-4px); }
+.nokia-top { display: flex; justify-content: center; gap: 8px; margin-bottom: 6px; }
+.nokia-top i { width: 10px; height: 10px; border-radius: 50%; background: #2a2a2a; }
+.nokia-brand { font-family: 'Fredoka', sans-serif; letter-spacing: 0.3em; text-align: center; color: #e2cf4c; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7); margin-bottom: 8px; }
+.screen {
+  display: flex; flex-direction: column; min-height: 190px; padding: 8px 12px 10px;
+  background: #dfe3e8; border: 5px solid #e9d94a; border-radius: 14px;
+  font-family: 'VT323', monospace; color: #111; text-align: left;
+}
+.status { display: flex; justify-content: space-between; font-size: 1.2rem; }
+.msg { flex: 1; margin: 0; padding: 14px 4px 0; font-size: 1.7rem; line-height: 1.1; }
+.msg.typing::after { content: '\258C'; animation: blink 0.8s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.softkeys { display: flex; justify-content: space-between; font-size: 1.4rem; font-weight: 700; }
+.softkeys a { color: #111; text-decoration: none; }
+.softkeys a:hover { text-decoration: underline; }
+@media (prefers-reduced-motion: reduce) { .tw, .msg.typing::after { animation: none; } .nokia { transition: none; } }
