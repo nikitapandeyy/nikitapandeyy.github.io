@@ -1,26 +1,167 @@
-[
-  {
-    "name": "AgentRedTeam",
-    "summary": "Stress-tests AI agents with adversarial scenarios and gives each one a trust score.",
-    "tags": "Python · Gemini ADK · FastAPI · PostgreSQL · Docker · GCP",
-    "points": [
-      "Scenarios cover prompt injection, contradictory instructions, missing data, role confusion and tool failures.",
-      "Each run is scored with rule-based checks plus an LLM judge.",
-      "Backend on FastAPI, PostgreSQL and GCP Cloud Run, with automated tests and CI/CD."
-    ],
-    "link": "agentredteam.html",
-    "linkText": "read the case study"
-  },
-  {
-    "name": "Hybrid Retrieval Service",
-    "summary": "Retrieval for RAG that mixes meaning-based and keyword search to find the right passages.",
-    "tags": "Python · FastAPI · FAISS · BM25",
-    "points": [
-      "Dense (FAISS) and sparse (BM25) results merged with Reciprocal Rank Fusion: Precision@5 up 21% on 10,000 documents.",
-      "FastAPI service with sub-400 ms p95 latency.",
-      "Checks that answers are grounded in the retrieved passages."
-    ],
-    "link": "",
-    "linkText": "source"
-  }
-]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nikita Pandey | ML Engineer</title>
+  <link rel="icon" type="image/webp" href="images/cat-fly-1.webp">
+  <meta name="description" content="Machine learning engineer working on NLP, retrieval and AI agent evaluation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Quicksand:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&family=VT323&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="sky" aria-hidden="true"><i class="cloud"></i><i class="cloud"></i><i class="cloud"></i><i class="cloud"></i><i class="cloud"></i></div>
+
+
+  <header class="nav">
+    <a href="#about">about</a>
+    <a href="#skills">skills</a>
+    <a href="#projects">projects</a>
+    <a href="#experience">experience</a>
+    <a href="#research">research</a>
+    <a href="#education">education</a>
+    <a href="#contact">contact</a>
+    <a href="blog.html">blog</a>
+  </header>
+
+  <section class="hero">
+    <p class="px">&#9993; 1 new message</p>
+    <h1 class="chrome"><span class="l1">hello, I'm</span><span class="l2">Nikita Pandey <span class="tw">&#10022;</span></span></h1>
+    <p class="role">machine learning engineer · DevOps · cloud</p>
+    <p class="tagline">I build NLP and retrieval systems, ship them with Docker and CI/CD on the cloud, and test AI agents until they're reliable.</p>
+    <p class="hero-cta">
+      <a class="btn-main" href="#projects">see my projects</a>
+      <a class="btn-soft" href="#contact">say hi</a>
+    </p>
+    <div class="nokia" aria-label="a text message on a yellow phone">
+      <div class="nokia-top"><i></i><i></i><i></i></div>
+      <div class="nokia-brand">NIKITA</div>
+      <div class="screen">
+        <div class="status"><span>11:11</span><span>&#9602;&#9604;&#9606; &#9645;</span></div>
+        <p class="msg" data-text="hi! I build ML systems that ship. open to work...xoxo"></p>
+        <div class="softkeys"><a href="#projects">Options</a><a href="#contact">Exit</a></div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="about">
+      <h2>about</h2>
+      <p>I'm Nikita, a machine learning engineer with an M.Tech from NIT Delhi. I work on NLP, retrieval and AI agents, and I care most about the step after the experiment: making a model run reliably inside a real service, with Docker, CI/CD and cloud deployment.</p>
+      <p>At STMicroelectronics I worked in a large production codebase, and my first-author paper on fake news detection is at IEEE CE2CT-2026.</p>
+    </section>
+
+    <section id="skills">
+      <h2>skills</h2>
+      <h3>how I ship ML</h3>
+      <div class="flow" id="flow">
+        <button type="button" class="on">build &amp; evaluate</button><span class="arrow">→</span>
+        <button type="button">serve</button><span class="arrow">→</span>
+        <button type="button">package</button><span class="arrow">→</span>
+        <button type="button">test &amp; automate</button><span class="arrow">→</span>
+        <button type="button">deploy &#9729;</button><span class="arrow">→</span>
+        <button type="button">check quality</button>
+      </div>
+      <p class="flow-text" id="flow-text"></p>
+      <h3>machine learning</h3>
+      <p class="pills"><span>PyTorch</span><span>scikit-learn</span><span>Hugging Face</span><span>Transformers</span><span>Fine-tuning</span><span>Deep learning</span><span>Model evaluation</span><span>Feature engineering</span></p>
+      <h3>GenAI &amp; retrieval</h3>
+      <p class="pills"><span>LLMs</span><span>RAG</span><span>FAISS</span><span>BM25</span><span>Gemini ADK</span><span>LangGraph</span></p>
+      <h3>engineering</h3>
+      <p class="pills"><span>Python</span><span>C++</span><span>SQL</span><span>Bash</span><span>FastAPI</span><span>REST APIs</span><span>PostgreSQL</span><span>MySQL</span><span>Git</span><span>Linux</span></p>
+      <h3>&#9729; cloud &amp; devops</h3>
+      <p class="pills"><span>Docker</span><span>CI/CD</span><span>GitHub Actions</span><span>Automated testing</span><span>GCP</span><span>Cloud Run</span><span>AWS</span></p>
+    </section>
+
+    <section id="projects">
+      <h2>projects</h2>
+      <div id="project-list"><p class="muted">loading projects…</p></div>
+    </section>
+
+    <section id="experience">
+      <h2>experience</h2>
+      <div class="entry">
+        <p class="date">Jul 2025 – Jun 2026</p>
+        <h3>Machine Learning Engineer, STMicroelectronics</h3>
+        <ul>
+          <li>Built a Python automation system for library and QA checks that cut a manual engineering workflow from 2 hours to about 20 minutes.</li>
+          <li>Debugged Python and C++ components in a large, sparsely documented production codebase and fixed root causes.</li>
+          <li>Studied technical papers and worked with engineers to extend a framework toward an AI agent-based workflow.</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <p class="date">2024 – 2025</p>
+        <h3>Teaching Assistant, NIT Delhi</h3>
+        <ul><li>Led Python, Data Structures and MySQL lab sessions for 60+ students.</li></ul>
+      </div>
+    </section>
+
+    <section id="research">
+      <h2>research</h2>
+      <div class="entry">
+        <p class="date">IEEE CE2CT-2026, first author</p>
+        <h3>MetaRoBERTa: Gated Metadata Fusion for Fake News Detection</h3>
+        <ul class="story">
+          <li><b>The idea.</b> A learned gate decides, for each input, how much to trust the text and how much to trust its metadata.</li>
+          <li><b>The result.</b> 90.5% Macro F1, 2.5 points above the baseline.</li>
+          <li><b>The check.</b> One benchmark feature would not exist at prediction time. Without it, performance fell to 75.3%, so I report both numbers.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>education</h2>
+      <div class="entry">
+        <p class="date">2024 – 2026</p>
+        <h3>M.Tech, Computer Science &amp; Engineering (Analytics)</h3>
+        <p>National Institute of Technology, Delhi. 85%</p>
+      </div>
+      <div class="entry">
+        <p class="date">2020 – 2024</p>
+        <h3>B.Tech, Computer Science &amp; Engineering</h3>
+        <p>Dr. Shakuntala Misra National Rehabilitation University, Lucknow. CGPA 8.92/10, Silver Medalist</p>
+      </div>
+      <p class="muted">GATE 2024: qualified in Computer Science &amp; IT and in Data Science &amp; AI.</p>
+    </section>
+
+    <section id="contact">
+      <h2>contact</h2>
+      <p>Open to ML and software engineering roles. Send me a message.</p>
+      <p>
+        <a class="btn-main" href="mailto:nikitapandey1020@gmail.com">email me</a>
+        <button class="btn-soft" id="copy-email" type="button">copy email</button>
+      </p>
+      <div class="socials">
+        <a class="soc s1" href="https://github.com/nikitapandeyy" target="_blank" rel="noopener"><b>gh</b><span>github</span></a>
+        <a class="soc s2" href="https://www.linkedin.com/in/nikita-pandey-02951124b" target="_blank" rel="noopener"><b>in</b><span>linkedin</span></a>
+        <a class="soc s3" href="https://x.com/mynikitaa" target="_blank" rel="noopener"><b>x</b><span>x</span></a>
+        <a class="soc s4" href="blog.html"><b>M</b><span>blog</span></a>
+        <a class="soc s5 soon" href="#" title="coming soon"><b>&#9654;</b><span>youtube</span></a>
+        <a class="soc s6 soon" href="#" title="coming soon"><b>cv</b><span>resume</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="scene-footer">
+    <p class="thanks chrome">thanks for visiting &#10022; xoxo</p>
+    <p>© 2026 Nikita Pandey</p>
+  </footer>
+
+  <div id="girl" class="stack" aria-hidden="true">
+    <img class="on" src="images/girl-1.webp" alt="">
+    <img src="images/girl-2.webp" alt="">
+    <img src="images/girl-3.webp" alt="">
+  </div>
+  <div id="flycat" class="stack" aria-hidden="true">
+    <img class="on" src="images/cat-fly-1.webp" alt="">
+    <img src="images/cat-fly-2.webp" alt="">
+    <p class="cat-says">say hi!</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
