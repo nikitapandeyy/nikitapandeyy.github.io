@@ -1,5 +1,5 @@
-// The blog list comes from posts.json: to publish a part, paste its Medium link into "url".
-fetch('posts.json')
+// The blog list comes from blog.json: to publish a part, paste its Medium link into "url".
+fetch('blog.json')
   .then(res => res.json())
   .then(allSeries => {
     document.getElementById('series-list').innerHTML = allSeries.map(s => {
